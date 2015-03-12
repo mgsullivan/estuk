@@ -44,4 +44,4 @@ gem 'devise'
 gem "cancan"
 gem "paperclip", "~> 4.2"
 gem "dotenv-rails",        group: :development
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'

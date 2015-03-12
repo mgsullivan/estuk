@@ -3,14 +3,14 @@ class Book < ActiveRecord::Base
 	has_attached_file :image
 	has_attached_file :resource
 
-	validates_attachent_content__type :image,
+	validates_attachment_content_type :image,
 	content_type: /^image\/(png|gif|jpg)/,
 	message: "Only images allowed for image upload"
-
-	validates_attachment_content_type :resource
+	
+	validates_attachment_content_type :resource,
 	content_type: ['application/pdf'],
 	message: "Only PDFs allowed for resource upload"
 
-	validates :image, attachment_presence: true, message: "All books must have an image"
-	validates :resource, attachment_presence: true, message: "All books must have a resource"
+	validates :image, attachment_presence: true
+	validates :resource, attachment_presence: true
 end

@@ -19,6 +19,7 @@
 	  </script>
 	</form>
 	-->
+  <% if current_user %>
 <%= form_tag buy_path(slug: @book.slug) %>
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -33,6 +34,5 @@
 
   </div>
 </div>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<% else %>
+<h4 class = "text-center">Please log in to buy</h4>
